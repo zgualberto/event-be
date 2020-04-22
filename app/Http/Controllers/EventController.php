@@ -109,7 +109,7 @@ class EventController extends Controller
 
         // Remove existing event based on date range
         Event::whereDate('edate', '>=', $request->input('dateFrom'))
-            ->OrWhereDate('edate', '<=', $request->input('dateTo'))
+            ->WhereDate('edate', '<=', $request->input('dateTo'))
             ->delete();
 
         foreach ($period as $dt) {
